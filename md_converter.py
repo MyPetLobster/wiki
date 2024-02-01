@@ -27,17 +27,23 @@ def md_converter(content):
     lines = content.splitlines()
     inside_ul = False
 
-    for i, line in lines:
+    for line in lines:
+        # Check if the line contains an <li> tag
         if '<li>' in line:
+            # If not already inside a list, insert <ul> tag before the first <li> tag
             if not inside_ul:
-                lines.insert(i, '<ul>')
+                lines.insert(lines.index(line), '<ul>')
                 inside_ul = True
         else:
+            # If inside a list, insert </ul> tag before this line
             if inside_ul:
-                lines.insert(i, "</ul>")
-                inside_list = False
-        
+                lines.insert(lines.index(line), '</ul>')
+                inside_ul = False
 
+    if inside_ul:
+        lines.append('</ul>')
+
+    content = '\n'.join(lines)
 
 
 
@@ -52,4 +58,9 @@ content = '''
     - indent one
     - indent two
 - test item 4
+
+<p>Not a list a paragraph</p>
+
+- LIST two item one
+- List two item two
 '''
