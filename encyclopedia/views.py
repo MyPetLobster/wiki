@@ -16,6 +16,7 @@ def entry(request, title):
         })
     
     html_content = md_converter.md_converter(markdown_content)
+    
     return render(request, "encyclopedia/entry.html", {
         "title": title,
         "content": html_content
