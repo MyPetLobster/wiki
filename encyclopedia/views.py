@@ -1,5 +1,6 @@
 from django import forms
 from django.shortcuts import render
+from random import randint
 from . import md_converter
 from . import util
 
@@ -89,11 +90,19 @@ def save_changes(request):
         title = request.POST.get("title")
         content = request.POST.get("content")
         util.save_entry(title, content)
-        return render(request, "encyclopedia/entry.html", {
-            "title": title,
-            "content": md_converter.md_converter(content)
-        })
+        return entry(request, title)
     else:
         return render(request, "encyclopedia/error.html", {
             "error_message": "Invalid request."
         })
+    
+
+def random(request):
+    all_pages = util.list_entries()
+    entry_count = len(all_pages)
+    num = randint(0, entry_count-1)
+    winner = all_pages[num]
+
+    return entry(request, winner)
+
+
