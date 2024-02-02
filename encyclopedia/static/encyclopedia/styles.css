@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: white;
+    overflow-x: hidden;
 }
 
 code {
@@ -35,4 +36,24 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+
+
+.create-new-form {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+}
+
+.create-new-form label {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.create-new-form input,
+.create-new-form textarea {
+    margin-top: 10px;
+    font-size: 16px;
+    width: 90%;
 }

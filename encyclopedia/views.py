@@ -4,15 +4,16 @@ from random import randint
 from . import md_converter
 from . import util
 
-class NewEntryForm(forms.Form):
-    title = forms.CharField(label="Title")
-    content = forms.CharField(label="Content", widget=forms.Textarea)
+# class NewEntryForm(forms.Form):
+#     title = forms.CharField(label="Title")
+#     content = forms.CharField(label="Content", widget=forms.Textarea(attrs={'style': 'width: 90%; height: 200px;'}))
 
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
+
 
 def entry(request, title):
     markdown_content = util.get_entry(title)
@@ -27,6 +28,7 @@ def entry(request, title):
         "title": title,
         "content": html_content
     })
+
 
 def search(request):
     query = request.GET.get('q')
@@ -46,10 +48,10 @@ def search(request):
         "entries": sub_matches
     })
 
+
 def new(request):
-    return render(request, "encyclopedia/new-entry.html", {
-        "form": NewEntryForm()
-    })
+    return render(request, "encyclopedia/new.html")
+
 
 def save(request):
     if request.method == "POST":
@@ -84,6 +86,7 @@ def edit(request, title):
         "title": title,
         "content": markdown_content
     })
+
 
 def save_changes(request):
     if request.method == "POST":
