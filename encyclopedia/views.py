@@ -16,8 +16,21 @@ def entry(request, title):
         })
     
     html_content = md_converter.md_converter(markdown_content)
-    
+
     return render(request, "encyclopedia/entry.html", {
         "title": title,
         "content": html_content
+    })
+
+def search(request):
+    query = request.GET.get('q')
+    entries = util.list_entries()
+    exact_match = [entry for entry in entries if query.lower() == entry.lower()]
+    if len(exact_match) == 1:
+        return entry(request, exact_match[0])
+
+    sub_matches = [entry for entry in entries if query.lower() in entry.lower()]
+    
+    return render(request, "encyclopedia/search.html", {
+        "entries": sub_matches
     })
