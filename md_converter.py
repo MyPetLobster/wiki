@@ -38,6 +38,8 @@ paragraph with some [links](https://www.google.com) and some **bold** and *itali
 
     content = convert_paragraphs(content)
 
+    content = convert_links(content)
+    
     print(content)
     print('\n')
 
@@ -149,7 +151,7 @@ def convert_ol(content):
     return content.replace('<liOL>', '<li>').replace('</liOL>', '</li>')
 
 def convert_links(content):
-    ...
+    return re.sub(r'\[(.+)\]\((.+)\)', r'<a href="\2">\1</a>', content)
 
 
         
