@@ -144,4 +144,4 @@ def convert_links(content):
 
     '''Converts markdown links to HTML links.'''
 
-    return re.sub(r'\[(.+)\]\((.+)\)', r'<a href="\2">\1</a>', content)
+    return re.sub(r'(?m)\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', content)
