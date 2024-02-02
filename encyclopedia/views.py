@@ -31,6 +31,11 @@ def search(request):
 
     sub_matches = [entry for entry in entries if query.lower() in entry.lower()]
     
+    if len(sub_matches) == 0:
+        return render(request, "encyclopedia/error.html", {
+            "error_message": "No results found."
+        })
+    
     return render(request, "encyclopedia/search.html", {
         "entries": sub_matches
     })
