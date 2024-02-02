@@ -19,25 +19,27 @@ This is a paragraph with **bold** text and text.
 
 My favorite search engine is [Duck Duck Go](https://duckduckgo.com). This is another 
 paragraph with some [links](https://www.google.com) and some **bold** and *italic* text.
+
+1. This is an ordered list item
+2. This is another ordered list item
+3. This is a third ordered list item
 '''
     print('\n')
     print(test_content)
     print('\n')
 
     content = convert_headers(test_content)
-    print(content)
-    print('\n')
 
     content = convert_bold_italic(content)
-    print(content)
-    print('\n')
 
     content = convert_ul(content)
-    print(content)
-    print('\n')
+
+    content = convert_ol(content)
 
     content = convert_paragraphs(content)
+
     print(content)
+    print('\n')
 
 
 
@@ -122,7 +124,29 @@ def convert_ul(content):
 
 
 def convert_ol(content):
-    ...
+    content = re.sub(r'(?m)^(\s*)?\d+\.\s*(.+?)\s*$', r'\1    <liOL>\2</liOL>', content)
+    lines = content.splitlines()
+    inside_ol = False
+
+    for line in lines:
+        # Check if the line contains an <li> tag
+        if '<liOL>' in line:
+            # If not already inside a list, insert <ol> tag before the first <li> tag
+            if not inside_ol:
+                lines.insert(lines.index(line), '<ol>')
+                inside_ol = True
+        else:
+            # If inside a list, insert </ol> tag before this line
+            if inside_ol:
+                lines.insert(lines.index(line), '</ol>')
+                inside_ol = False
+
+    if inside_ol:
+        lines.append('</ol>')
+        
+    content = '\n'.join(lines)
+
+    return content.replace('<liOL>', '<li>').replace('</liOL>', '</li>')
 
 def convert_links(content):
     ...
