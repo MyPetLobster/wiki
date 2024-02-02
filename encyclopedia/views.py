@@ -55,24 +55,14 @@ def new(request):
 
 def save(request):
     if request.method == "POST":
-        form = NewEntryForm(request.POST)
-        if form.is_valid():
-            title = form.cleaned_data["title"]
-            content = "# " + title + "\n\n" + form.cleaned_data["content"]
-            if util.get_entry(title):
-                return render(request, "encyclopedia/error.html", {
-                    "error_message": "An entry with this title already exists."
-                })
-            util.save_entry(title, content)
-            return entry(request, title)
-        else:
+        title = request.POST.get("title")
+        content = "# " + title + "\n" + request.POST.get("content")
+        if title in util.list_entries():
             return render(request, "encyclopedia/error.html", {
-                "error_message": "Invalid form."
+                "error_message": "The page already exists."
             })
-    else:
-        return render(request, "encyclopedia/error.html", {
-            "error_message": "Invalid request."
-        })
+        util.save_entry(title, content)
+        return entry(request, title)
     
 
 def edit(request, title):
