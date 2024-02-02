@@ -1,53 +1,13 @@
 import re
-''' 
-Challenge for those more comfortable: If you’re feeling more comfortable, 
-try implementing the Markdown to HTML conversion without using any external 
-libraries, supporting headings, boldface text, unordered lists, links, and 
-paragraphs. You may find using regular expressions in Python helpful.
-'''
-
-def main():
-    test_content = '''# This is a header
-## This is a smaller header
-### This is an even smaller header 
-
-This is a paragraph with **bold** text and text.
-
-- This is a list item
-- This is another list item
-- This is a third list item
-
-My favorite search engine is [Duck Duck Go](https://duckduckgo.com). This is another 
-paragraph with some [links](https://www.google.com) and some **bold** and *italic* text.
-
-1. This is an ordered list item
-2. This is another ordered list item
-3. This is a third ordered list item
-'''
-    print('\n')
-    print(test_content)
-    print('\n')
-
-    content = convert_headers(test_content)
-
-    content = convert_bold_italic(content)
-
-    content = convert_ul(content)
-
-    content = convert_ol(content)
-
-    content = convert_paragraphs(content)
-
-    content = convert_links(content)
-    
-    print(content)
-    print('\n')
 
 
-
-def md_converter(content):
-    html_content = convert_headers(convert_bold(convert_ul(content)))
-
+def md_converter(markdown_content):
+    html_content = convert_headers(markdown_content)
+    html_content = convert_bold_italic(html_content)
+    html_content = convert_ul(html_content)
+    html_content = convert_ol(html_content)
+    html_content = convert_paragraphs(html_content)
+    html_content = convert_links(html_content)
     return html_content
 
 
@@ -65,6 +25,7 @@ def convert_headers(content):
 def convert_bold_italic(content):
     content = re.sub(r'(?m)\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
     return re.sub(r'(?m)\*(.+?)\*', r'<em>\1</em>', content)
+
 
 def convert_paragraphs(content):
     # Split the content into lines
@@ -152,9 +113,3 @@ def convert_ol(content):
 
 def convert_links(content):
     return re.sub(r'\[(.+)\]\((.+)\)', r'<a href="\2">\1</a>', content)
-
-
-        
-                
-if __name__ == "__main__":
-    main()
