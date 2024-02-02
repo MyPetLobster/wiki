@@ -2,12 +2,26 @@ import re
 
 
 def md_converter(markdown_content):
-    html_content = convert_headers(markdown_content)
-    html_content = convert_bold_italic(html_content)
-    html_content = convert_ul(html_content)
-    html_content = convert_ol(html_content)
-    html_content = convert_paragraphs(html_content)
-    html_content = convert_links(html_content)
+    # Check if the input is a non-empty string
+    if not markdown_content or not isinstance(markdown_content, str):
+        print('Invalid input to md_converter. Please provide a non-empty string.')
+        return None
+    
+    # List of all conversion functions
+    conversion_functions = [
+        convert_headers,
+        convert_bold_italic,
+        convert_ul,
+        convert_ol,
+        convert_paragraphs,
+        convert_links
+    ]
+    
+    # Apply each conversion function
+    html_content = markdown_content
+    for func in conversion_functions:
+        html_content = func(html_content)
+    
     return html_content
 
 
@@ -28,16 +42,11 @@ def convert_bold_italic(content):
 
 
 def convert_paragraphs(content):
-    # Split the content into lines
+    
     lines = content.splitlines()
-
-    # Initialize am empty list to hold the converted lines
     converted_lines = []
-
-    # Initialize a variable to keep track of whether we are inside a paragraph
     inside_para = False
 
-    # Iterate through the lines
     for line in lines:
         # If the line is not empty and we're not inside a paragraph, start a new paragraph
         if line.strip() and not re.match(r'^(<.*?>)|(    <.*?>)', line) and not inside_para:
