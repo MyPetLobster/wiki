@@ -33,8 +33,8 @@ This is a paragraph with **bold** text and text.
     print(content)
     print('\n')
 
-    # content = convert_paragraphs(content)
-    # print(content)
+    content = convert_paragraphs(content)
+    print(content)
 
 
 # Function that uses regex to convert markdown to html
@@ -82,24 +82,39 @@ def convert_ul(content):
 
     return content
 
-def convert_paragraphs(content):
-    lines = content.splitlines()
-    inside_para = False
-    for line in lines:
-        if re.match(r'^\s*$', line):
-            if not re.match(r'^(<h.>)|(<ul>)', lines[lines.index(line)+1] ):
-                if not inside_para:
-                    lines[lines.index(line)] = '<p>'
-                    inside_para = True
-            else:
-                lines.insert(lines.index(line), '</p>')
-                inside_para = False
-    if inside_para:
-        lines.append('</p>')
-    
-    content = '\n'.join(lines)
-    return content
 
+def convert_paragraphs(content):
+    # Split the content into lines
+    lines = content.splitlines()
+
+    # Initialize am empty list to hold the converted lines
+    converted_lines = []
+
+    # Initialize a variable to keep track of whether we are inside a paragraph
+    inside_para = False
+
+    # Iterate through the lines
+    for line in lines:
+        # If the line is not empty and we're not inside a paragraph, start a new paragraph
+        if line.strip() and not re.match(r'^(<.*?>)|(    <.*?>)', line) and not inside_para:
+            converted_lines.append('<p>')
+            inside_para = True
+
+        # If the line is empty and we're inside paragraph, end the paragraph
+        elif not line.strip() and inside_para:
+            converted_lines.append('</p>')
+            inside_para = False
+
+        # If the line is not empty, add it to the current paragraph
+        if line.strip():
+            converted_lines.append(line)
+    
+    # If we're still inside a paragraph at the end, end the paragraph
+    if inside_para:
+        converted_lines.append('</p>')
+
+    return '\n'.join(converted_lines)
+        
                 
 if __name__ == "__main__":
     main()
