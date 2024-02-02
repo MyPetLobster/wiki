@@ -16,6 +16,9 @@ This is a paragraph with **bold** text and text.
 - This is a list item
 - This is another list item
 - This is a third list item
+
+My favorite search engine is [Duck Duck Go](https://duckduckgo.com). This is another 
+paragraph with some [links](https://www.google.com) and some **bold** and *italic* text.
 '''
     print('\n')
     print(test_content)
@@ -25,7 +28,7 @@ This is a paragraph with **bold** text and text.
     print(content)
     print('\n')
 
-    content = convert_bold(content)
+    content = convert_bold_italic(content)
     print(content)
     print('\n')
 
@@ -37,7 +40,7 @@ This is a paragraph with **bold** text and text.
     print(content)
 
 
-# Function that uses regex to convert markdown to html
+
 def md_converter(content):
     html_content = convert_headers(convert_bold(convert_ul(content)))
 
@@ -54,34 +57,10 @@ def convert_headers(content):
     content = content.replace('<######>', '<h6>').replace('</######>', '</h6>')
     return content
 
-def convert_bold(content):
-    return re.sub(r'(?m)\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
 
-def convert_ul(content):
-    content = re.sub(r'(?m)^(\s*)?[-|*|+]\s*(.+?)\s*$', r'\1    <li>\2</li>', content)
-    lines = content.splitlines()
-    inside_ul = False
-
-    for line in lines:
-        # Check if the line contains an <li> tag
-        if '<li>' in line:
-            # If not already inside a list, insert <ul> tag before the first <li> tag
-            if not inside_ul:
-                lines.insert(lines.index(line), '<ul>')
-                inside_ul = True
-        else:
-            # If inside a list, insert </ul> tag before this line
-            if inside_ul:
-                lines.insert(lines.index(line), '</ul>')
-                inside_ul = False
-
-    if inside_ul:
-        lines.append('</ul>')
-
-    content = '\n'.join(lines)
-
-    return content
-
+def convert_bold_italic(content):
+    content = re.sub(r'(?m)\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
+    return re.sub(r'(?m)\*(.+?)\*', r'<em>\1</em>', content)
 
 def convert_paragraphs(content):
     # Split the content into lines
@@ -114,6 +93,41 @@ def convert_paragraphs(content):
         converted_lines.append('</p>')
 
     return '\n'.join(converted_lines)
+
+
+def convert_ul(content):
+    content = re.sub(r'(?m)^(\s*)?[-|*|+]\s*(.+?)\s*$', r'\1    <li>\2</li>', content)
+    lines = content.splitlines()
+    inside_ul = False
+
+    for line in lines:
+        # Check if the line contains an <li> tag
+        if '<li>' in line:
+            # If not already inside a list, insert <ul> tag before the first <li> tag
+            if not inside_ul:
+                lines.insert(lines.index(line), '<ul>')
+                inside_ul = True
+        else:
+            # If inside a list, insert </ul> tag before this line
+            if inside_ul:
+                lines.insert(lines.index(line), '</ul>')
+                inside_ul = False
+
+    if inside_ul:
+        lines.append('</ul>')
+
+    content = '\n'.join(lines)
+
+    return content
+
+
+def convert_ol(content):
+    ...
+
+def convert_links(content):
+    ...
+
+
         
                 
 if __name__ == "__main__":
