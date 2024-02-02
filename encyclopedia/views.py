@@ -70,3 +70,30 @@ def save(request):
         return render(request, "encyclopedia/error.html", {
             "error_message": "Invalid request."
         })
+    
+
+def edit(request, title):
+    markdown_content = util.get_entry(title)
+    if not markdown_content:
+        return render(request, "encyclopedia/error.html", {
+            "error_message": "The requested page was not found."
+        })
+    
+    return render(request, "encyclopedia/edit.html", {
+        "title": title,
+        "content": markdown_content
+    })
+
+def save_changes(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        content = request.POST.get("content")
+        util.save_entry(title, content)
+        return render(request, "encyclopedia/entry.html", {
+            "title": title,
+            "content": md_converter.md_converter(content)
+        })
+    else:
+        return render(request, "encyclopedia/error.html", {
+            "error_message": "Invalid request."
+        })
