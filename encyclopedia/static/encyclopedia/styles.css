@@ -11,7 +11,7 @@ code {
 
 h1 {
     margin-top: 0px;
-    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 textarea {
@@ -33,7 +33,12 @@ textarea {
 .sidebar {
     background-color: #f0f0f0;
     height: 100vh;
-    padding: 30px;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar * {
+    margin-top: 6px;
 }
 
 
@@ -41,6 +46,11 @@ textarea {
     margin-top: 5px;
 }
 
+
+.home-h1 {
+    width: 100%;
+    text-align: center;
+}
 
 /* EDIT ENTRY PAGE and CREATE NEW */
 .create-new-form,
@@ -73,7 +83,8 @@ textarea {
 
 .index-container ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
+    grid-auto-flow: column;
     grid-gap: 5px;
 }
