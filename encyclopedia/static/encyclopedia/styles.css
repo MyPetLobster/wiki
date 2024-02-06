@@ -1,11 +1,23 @@
-/* DEFAULT CSS */
+/* CSS Variables for Colors */
+:root {
+    --main-bg-color: rgb(250, 252, 252);
+    --sidebar-bg-color: rgb(222, 228, 230);
+    --main-text-color: rgb(9, 47, 59);
+    --main-link-color: rgb(36, 88, 106);
+    --link-hover-color: rgb(20, 111, 138);
+    --bold-link-color: rgb(60, 120, 139);
+    --button-color: rgb(9, 47, 59);
+    --button-hover-color: rgb(36, 88, 106);
+}
+
+/* GENERAL */
 body {
     margin: 0;
-    background-color: rgb(250, 252, 252);
+    background-color: var(--main-bg-color);
     padding-bottom: 50px;
     height: 100vh;
     font-family: "Josefin Sans", sans-serif;
-    color: rgb(9, 47, 59);
+    color: var(--main-text-color);
     overflow: hidden;
 }
 
@@ -30,6 +42,50 @@ textarea {
     height: 400px;
 }
 
+
+/* MORE GENERAL */
+.bold-a {
+    text-decoration: none;
+    color: var(--bold-link-color);
+    font-weight: 400;
+}
+.bold-a:hover {
+    text-decoration: none;
+    color: var(--link-hover-color);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-link-color);
+    font-weight: 300;
+}
+a:hover {
+    text-decoration: none;
+    color: var(--link-hover-color);
+    font-weight: 400;
+}
+
+li::marker {
+    color: var(--main-text-color);
+}
+
+input[type=submit] {
+    width: 175px;
+    background-color: var(--button-color);
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+}
+input[type=submit]:hover {
+    background-color: var(--button-hover-color);
+}
+#submit-btn {
+    width: 175px;
+}
+
+/* SIDEBAR */
 .search {
     width: 100%;
     font-size: 15px;
@@ -39,7 +95,7 @@ textarea {
 }
 
 .sidebar {
-    background-color: rgb(222, 228, 230);
+    background-color: var(--sidebar-bg-color);
     height: 100vh;
     padding: 20px;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
@@ -50,50 +106,31 @@ textarea {
     margin-left: 3px;
 }
 
-
 .sidebar h2 {
     font-weight: 700;
     margin-top: 5px;
     margin-left: 15px;
 }
 
-.bold-a {
-    text-decoration: none;
-    color: rgb(60, 120, 139);
-    font-weight: 400;
-}
 
-.bold-a:hover {
-    text-decoration: none;
-    color: rgb(9, 47, 59);
-    font-weight: 700;
-}
-
-
+/* INDEX PAGE */
 .home-h1 {
     width: 100%;
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(36, 88, 106);
-    font-weight: 200;
+.index-container ul {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
+    grid-auto-flow: column;
+    grid-gap: 5px;
 }
 
-a:hover {
-    text-decoration: none;
-    color: rgb(36, 88, 106);
-    font-weight: 400;
-}
-
-li::marker {
-    color: rgb(9, 47, 59);
-}
 
 /* EDIT ENTRY PAGE and CREATE NEW */
 .create-new-form,
-.edit-form{
+.edit-form {
     display: flex;
     flex-direction: column;
     height: 450px;
@@ -114,32 +151,4 @@ li::marker {
 
 .edit-form textarea {
     width: 90%;
-}
-
-/* #submit-btn {
-    height: 45px;
-    width: 175px;
-    background-color: rgb(36, 88, 106);
-    border: none;
-} */
-input[type=submit] {
-    width: 175px;
-    background-color: rgb(9, 47, 59);
-    color: white;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 8px;
-}
-
-input[type=submit]:hover {
-    background-color: rgb(36, 88, 106);
-}
-
-
-.index-container ul {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
-    grid-auto-flow: column;
-    grid-gap: 5px;
 }
