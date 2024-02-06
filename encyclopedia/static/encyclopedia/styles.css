@@ -1,7 +1,8 @@
+/* DEFAULT CSS */
 body {
     margin: 0;
     background-color: white;
-    overflow-x: hidden;
+    padding-bottom: 50px;
 }
 
 code {
@@ -19,7 +20,8 @@ textarea {
 }
 
 .main {
-    padding: 10px;
+    padding: 50px;
+    height: 400px;
 }
 
 .search {
@@ -31,20 +33,21 @@ textarea {
 .sidebar {
     background-color: #f0f0f0;
     height: 100vh;
-    padding: 20px;
+    padding: 30px;
 }
+
 
 .sidebar h2 {
     margin-top: 5px;
 }
 
 
-
+/* EDIT ENTRY PAGE and CREATE NEW */
 .create-new-form,
 .edit-form{
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: 400px;
 }
 
 .create-new-form label {
@@ -59,11 +62,18 @@ textarea {
     width: 90%;
 }
 
-
 .edit-form textarea {
     width: 90%;
 }
 
 #submit-btn {
     width: 150px;
+}
+
+
+.index-container ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 5px;
 }
