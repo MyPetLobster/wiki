@@ -9,9 +9,9 @@
     <form class="create-new-form" action="{% url 'save' %}" method="post">
         {% csrf_token %}
         <label for="title">Title:</label>
-        <input type="text" name="title" placeholder="title">
+        <input type="text" name="title" placeholder="Title">
         <label for="content">Content:</label>
-        <textarea name="content" rows="20" cols="60" placeholder="content here"></textarea><br>
+        <textarea name="content" rows="20" cols="60" placeholder="Markdown content here"></textarea><br>
         <input id="submit-btn" type="submit" value="Save">
     </form>
 {% endblock %}
