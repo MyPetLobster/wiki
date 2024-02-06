@@ -1,0 +1,2 @@
+# Node.js
+Node.js is a [JavaScript](/wiki/javascript) runtime built on Chrome's V8 JavaScript engine. It enables developers to run JavaScript code outside the browser, allowing for server-side scripting, building command-line tools, and developing scalable network applications.

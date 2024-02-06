@@ -1,0 +1,2 @@
+# Khan Academy
+Khan Academy is an educational website offering courses and tutorials on various subjects, including math, science, economics, and computer programming. It provides interactive exercises, instructional videos, and personalized learning tools to help learners master concepts at their own pace.

@@ -8,11 +8,11 @@
 
     <h1>Edit {{ title }} Page</h1>
 
-    <form action="{% url 'save_changes' %}" method="post">
+    <form class="edit-form" action="{% url 'save_changes' %}" method="post">
         {% csrf_token %}
         <input type="hidden" name="title" value="{{ title }}">
-        <textarea name="content" rows="20" cols="60">{{ content }}</textarea><br>
-        <input type="submit" value="Save">
+        <textarea class="edit-textarea" name="content" rows="20" cols="60">{{ content }}</textarea><br>
+        <input id="submit-btn" type="submit" value="Save">
     </form>
 
 {% endblock %}

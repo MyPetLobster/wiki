@@ -1,0 +1,2 @@
+# edX
+EdX is an online learning platform offering courses from universities and institutions worldwide. It provides access to high-quality educational content in various disciplines, including computer science, engineering, business, and humanities, enabling learners to advance their skills and knowledge remotely.

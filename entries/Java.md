@@ -1,0 +1,2 @@
+# Java
+Java is a widely-used, general-purpose programming language known for its "write once, run anywhere" philosophy. It is designed to be platform-independent, making it suitable for developing applications ranging from desktop software to enterprise systems and mobile apps.

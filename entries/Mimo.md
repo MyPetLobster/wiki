@@ -1,0 +1,2 @@
+# Mimo
+Mimo is a mobile app offering bite-sized coding lessons and challenges. It covers various programming languages, including [Python](/wiki/python), [JavaScript](/wiki/javascript), [HTML](/wiki/html)/[CSS](/wiki/css), and more, catering to beginners and experienced developers looking to expand their skills.

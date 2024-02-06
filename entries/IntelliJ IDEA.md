@@ -1,0 +1,2 @@
+# IntelliJ IDEA
+IntelliJ IDEA is an integrated development environment (IDE) for [Java](/wiki/java) development, among other languages. It offers advanced features such as code analysis, refactoring tools, debugging support, and intelligent code completion, making it a popular choice among Java developers.

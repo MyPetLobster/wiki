@@ -1,0 +1,2 @@
+# Ubuntu
+Ubuntu is a popular [Linux](/wiki/linux) distribution based on Debian. It is known for its user-friendly interface, extensive software repositories, and community-driven development model. Ubuntu is often used for desktop computing, servers, cloud computing, and Internet of Things (IoT) devices.

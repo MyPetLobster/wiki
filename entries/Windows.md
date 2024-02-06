@@ -1,0 +1,2 @@
+# Windows
+Windows is a family of proprietary operating systems developed by Microsoft Corporation. It dominates the desktop computing market and is widely used in personal computers, laptops, and enterprise environments. Windows is known for its graphical user interface (GUI), compatibility with a wide range of software and hardware, and extensive support for gaming and multimedia applications.

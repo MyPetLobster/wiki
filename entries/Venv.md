@@ -1,0 +1,2 @@
+# Venv
+The venv module is a part of the Python Standard Library that facilitates the creation and management of lightweight virtual environments. [Virtual environments](/wiki/virtual%20environments) enable developers to isolate project dependencies and avoid conflicts between different projects' requirements. With venv, developers can create self-contained environments with their own [Python](/wiki/python) interpreter and package installations, providing a clean and controlled environment for project development and deployment.

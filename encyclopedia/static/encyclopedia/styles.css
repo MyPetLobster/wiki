@@ -40,7 +40,8 @@ textarea {
 
 
 
-.create-new-form {
+.create-new-form,
+.edit-form{
     display: flex;
     flex-direction: column;
     height: 50%;
@@ -56,4 +57,13 @@ textarea {
     margin-top: 10px;
     font-size: 16px;
     width: 90%;
+}
+
+
+.edit-form textarea {
+    width: 90%;
+}
+
+#submit-btn {
+    width: 150px;
 }

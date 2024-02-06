@@ -1,0 +1,2 @@
+# Python Standard Library
+The Python Standard Library is a comprehensive collection of modules and packages that provide essential functionality for various tasks, ranging from file I/O and networking to data manipulation and web development. It comes included with every [Python](/wiki/python) installation, making it readily available for developers to use without needing to install additional third-party libraries. The Standard Library promotes code reusability, efficiency, and consistency across Python projects.

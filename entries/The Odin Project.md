@@ -1,0 +1,2 @@
+# The Odin Project
+The Odin Project is a free, open-source curriculum for learning web development. It offers a structured learning path covering [HTML](/wiki/html), [CSS](/wiki/css), [JavaScript](/wiki/javascript), [Ruby on Rails](/wiki/Ruby%20on%20Rails), and other essential web technologies, along with practical projects and exercises to reinforce learning.

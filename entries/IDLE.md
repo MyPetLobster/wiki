@@ -1,0 +1,2 @@
+# IDLE
+IDLE stands for Integrated Development and Learning Environment, which is a [Python](/wiki/python) IDE included with the standard distribution. It provides features such as syntax highlighting, code completion, and a built-in debugger, making it suitable for both beginners learning Python and experienced developers.

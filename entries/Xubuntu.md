@@ -1,0 +1,2 @@
+# Xubuntu
+Xubuntu is a [Linux](/wiki/linux) distribution based on [Ubuntu](/wiki/ubuntu), featuring the Xfce desktop environment. It is designed to be lightweight and user-friendly, making it suitable for older hardware or users looking for a fast and efficient operating system.

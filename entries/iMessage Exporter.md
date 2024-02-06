@@ -1,0 +1,2 @@
+# iMessage Exporter
+iMessage Exporter is a tool for exporting iMessage conversations and attachments from macOS. It allows users to extract messages and media files from their iMessage conversations and save them for archival or backup purposes.

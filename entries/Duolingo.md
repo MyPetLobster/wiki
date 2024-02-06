@@ -1,0 +1,2 @@
+# Duolingo
+Duolingo is a language-learning platform offering courses in many languages. It uses gamification and adaptive learning techniques to make language learning fun and engaging, offering lessons in reading, writing, listening, and speaking.

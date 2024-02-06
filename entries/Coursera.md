@@ -1,0 +1,2 @@
+# Coursera
+Coursera is an online learning platform offering courses, specializations, and degrees from universities and institutions worldwide. It provides flexible learning options, allowing students to enroll in individual courses or pursue comprehensive programs leading to certifications or degrees.

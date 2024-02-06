@@ -1,0 +1,2 @@
+# Linux
+Linux is an open-source operating system kernel originally developed by Linus Torvalds in 1991. It is the foundation for many Unix-like operating systems, known as Linux distributions, which are widely used in servers, embedded systems, supercomputers, and mobile devices. Linux is known for its stability, security, and flexibility, with thousands of free and open-source software applications available for it.

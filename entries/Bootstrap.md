@@ -1,0 +1,2 @@
+# Bootstrap
+Bootstrap is a popular front-end framework for building responsive and mobile-first websites. It provides a collection of [CSS](/wiki/css) and [JavaScript](/wiki/javascript) components, such as buttons, forms, navigation bars, and grid systems, that streamline the development process and ensure consistency in design across different devices and screen sizes.

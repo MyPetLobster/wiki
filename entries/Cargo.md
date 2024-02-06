@@ -1,0 +1,2 @@
+# Cargo
+Cargo is the package manager and build system for the [Rust](/wiki/rust) programming language. It simplifies the process of managing dependencies, building, testing, and packaging Rust projects. Cargo also integrates with the Rust compiler to automate common development tasks.
