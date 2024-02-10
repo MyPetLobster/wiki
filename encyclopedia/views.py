@@ -4,10 +4,6 @@ from random import randint
 from . import md_converter as mdc
 from . import util
 
-# class NewEntryForm(forms.Form):
-#     title = forms.CharField(label="Title")
-#     content = forms.CharField(label="Content", widget=forms.Textarea(attrs={'style': 'width: 90%; height: 200px;'}))
-
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
