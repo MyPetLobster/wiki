@@ -34,7 +34,7 @@ def convert_headers(content):
 
     content = re.sub(r'(?m)^(#{1,6})\s*(.+?)$', r'<\1>\2</\1>', content)
     for i in range(1, 7):
-        content = content.replace(f'<#{i}>', f'<h{i}>').replace(f'</#{i}>', f'</h{i}>')
+        content = content.replace(f'<{"#" * i}>', f'<h{i}>').replace(f'</{"#" * i}>', f'</h{i}>')
     return content
 
 
@@ -65,7 +65,7 @@ def convert_paragraphs(content):
             converted_lines.append('</p>')
             inside_para = False
 
-        # If the line is not empty, add it to the current paragraph
+        # If the line is not empty, add it to converted lines
         if line.strip():
             converted_lines.append(line)
     
@@ -100,11 +100,9 @@ def convert_ul(content):
     if inside_ul:
         lines.append('</ul>')
 
-    content = '\n'.join(lines)
+    return '\n'.join(lines)
 
-    return content
-
-
+   
 def convert_ol(content):
 
     '''Converts markdown ordered lists to HTML ordered lists.'''
