@@ -33,12 +33,8 @@ def convert_headers(content):
     '''Converts markdown headers to HTML headers.'''
 
     content = re.sub(r'(?m)^(#{1,6})\s*(.+?)$', r'<\1>\2</\1>', content)
-    content = content.replace('<#>', '<h1>').replace('</#>', '</h1>')
-    content = content.replace('<##>', '<h2>').replace('</##>', '</h2>')
-    content = content.replace('<###>', '<h3>').replace('</###>', '</h3>')
-    content = content.replace('<####>', '<h4>').replace('</####>', '</h4>')
-    content = content.replace('<#####>', '<h5>').replace('</#####>', '</h5>')
-    content = content.replace('<######>', '<h6>').replace('</######>', '</h6>')
+    for i in range(1, 7):
+        content = content.replace(f'<#{i}>', f'<h{i}>').replace(f'</#{i}>', f'</h{i}>')
     return content
 
 
