@@ -1,7 +1,7 @@
 from django import forms
 from django.shortcuts import render
 from random import randint
-from . import md_converter
+from . import md_converter as mdc
 from . import util
 
 # class NewEntryForm(forms.Form):
@@ -22,7 +22,7 @@ def entry(request, title):
             "error_message": "The requested page was not found."
         })
     
-    html_content = md_converter.md_converter(markdown_content)
+    html_content = mdc.md_converter(markdown_content)
 
     return render(request, "encyclopedia/entry.html", {
         "title": title,
