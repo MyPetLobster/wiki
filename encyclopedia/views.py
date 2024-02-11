@@ -1,4 +1,3 @@
-from django import forms
 from django.shortcuts import render
 from random import randint
 from . import md_converter as mdc
