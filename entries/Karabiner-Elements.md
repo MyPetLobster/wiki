@@ -1,2 +1,0 @@
-# Karabiner-Elements
-Karabiner-Elements is a [macOS](/wiki/macos) software for customizing keyboard shortcuts and remapping keys. It provides a graphical interface and configuration files for users to customize their keyboard layouts and behavior according to their preferences.

@@ -1,2 +1,0 @@
-# Figma
-Figma is a web-based collaborative interface design tool. It allows teams to create, prototype, and collaborate on user interface designs in real-time, offering features such as version control, commenting, and developer handoff.
