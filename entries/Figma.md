@@ -1,0 +1,2 @@
+# Figma
+Figma is a web design tool that allows users to collaborate on interactive user interface prototypes in real-time. It's a collaborative interface design tool that can be run from a web browser and works on Macs, PCs, Chromebooks, and Windows or Linux.
